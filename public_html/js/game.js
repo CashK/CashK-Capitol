@@ -40,6 +40,7 @@ var game = {
 	// Run on game resources loaded.
 	"loaded" : function () {
             me.pool.register("hero1", game.PlayerEntity, true);
+            me.pool.register("Enemy", game.Enemy);
             
             me.pool.register("levelTrigger", game.LevelTrigger);
             

@@ -9,7 +9,7 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.levelDirector.loadLevel("Stage01");
                 
                 this.resetPlayer(0, 400);    
-                
+                //adding a key to represent each action and call the coding for each
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
                 me.input.bindKey(me.input.KEY.UP, "jump");

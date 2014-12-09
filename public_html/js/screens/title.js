@@ -5,13 +5,17 @@ game.TitleScreen = me.ScreenObject.extend({
 	onResetEvent: function() {	
 		me.game.world.addChild( new me.Sprite (0, 0, me.loader.getImage('title-screen')), -10);
                 me.input.bindKey(me.input.KEY.ENTER, "start");
-                
+                /**
+                Selecting Font, Size and Color 
+                **/
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
-                        this._super(me.Renderable, 'init'[510, 30, me.game.viewport.width]);
-                        this.font = new me.Font("Arial", 46, "blue");
+                        this._super(me.Renderable, 'init', [510, 30, me.game.viewport.height, me.game.viewport.width]);
+                        this.font = new me.Font("Arial", 46, "white");
                     },
-                    
+                    /**
+                    Title Screen Text
+                    **/
                     draw: function(renderer){
                         this.font.draw(renderer.getContext(), "Marioish", 450, 130);
                         this.font.draw(renderer.getContext(), "Press ENTER To Begin", 250, 530);

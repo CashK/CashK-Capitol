@@ -2,7 +2,9 @@
 game.PlayerEntity = me.Entity.extend({
    init: function (x, y, settings){
        this._super(me.Entity, 'init', [x, y, { 
+           //select image
            image: "hero1",
+           //set sprite width and height
            spritewidth: "64",
            spriteheight: "64",
            width: 64,
@@ -12,7 +14,7 @@ game.PlayerEntity = me.Entity.extend({
            }
            
            }]);
-       
+       //specify which frames are to be utilized for each action in which order
        this.renderable.addAnimation("idle", [78]);
        this.renderable.addAnimation("smallWalk", [143, 144, 145, 146, 147, 148, 149, 150, 150], 88);
        this.renderable.addAnimation("jump", [9, 10, 11], 80);
@@ -47,7 +49,7 @@ game.PlayerEntity = me.Entity.extend({
                 this.renderable.setCurrentAnimation("smallWalk");
             }
         } else {
-            this.body.vel.x = 0;
+            this.body.vel.x =  0;
             // change to the standing animation
             this.renderable.setCurrentAnimation("idle");
         }
@@ -75,7 +77,7 @@ game.PlayerEntity = me.Entity.extend({
 
 
 });
-
+//SPAWN SETTINGS
 game.LevelTrigger = me.Entity.extend({
     init: function (x, y, settings){
         this._super(me.Entity, 'init', [x, y, settings]);
@@ -89,6 +91,29 @@ game.LevelTrigger = me.Entity.extend({
         this.body.setCollisionMask(me.collision.types.NO_OBJECT);
         me.levelDirector.loadLevel(this.level);
         me.state.current().resetPlayer(this.xSpawn, this.ySpawn);
+    }
+    
+});
+
+game.Enemy = me.Entity.extend({
+    init: function(x, y, settings){
+        this._super(me.Entity, 'init', [x, y, { 
+           //select image
+           image: "slime",
+           //set sprite width and height
+           spritewidth: "60",
+           spriteheight: "28",
+           width: 60,
+           height: 28,
+           getShape: function() {
+               return(new me.Rect(0, 0, 60, 28)).toPolygon();
+           }
+           
+           }]);
+    },
+    
+    update: function(delta){
+        
     }
     
 });
