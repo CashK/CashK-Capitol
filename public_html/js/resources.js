@@ -9,7 +9,7 @@ game.resources = [
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "hero1", type:"image", src: "data/img/hero1.png"},
         {name: "title-screen", type:"image", src: "data/img/title-screen.png"},
-        {name: "slime", type:"image", src: "data/img/slime-spritesheet.png"},
+        {name: "slime", type:"image", src: "data/img/slime-.png"},
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
