@@ -24,7 +24,7 @@
  <objectgroup name="trigger-entities">
   <object name="levelTrigger" x="1832" y="482" width="54" height="150">
    <properties>
-    <property name="level" value="Stage02"/>
+    <property name="level" value="Stage04"/>
     <property name="xSpawn" value="0"/>
     <property name="ySpawn" value="0"/>
    </properties>
